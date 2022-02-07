@@ -5,8 +5,6 @@ from selenium.webdriver.support import expected_conditions as ec
 
 
 class LCW:
-
-
     CATEGORY_PAGE = (By.CSS_SELECTOR, ".sf-with-ul.outlet")
     PRODUCT_PAGE = (By.CSS_SELECTOR, ".product-card")
     CHOOSE_SIZE = (By.XPATH, "//a[contains(text(),'S')]")
@@ -40,5 +38,6 @@ class LCW:
         self.wait.until(ec.presence_of_all_elements_located(self.MAIN_PAGE))[0].click()
         assert self.wait.until(ec.presence_of_all_elements_located(self.MAIN_BUTTON))[0].is_displayed(), \
             "You are not on the home page"
+
 
 LCW().test_navigate()
